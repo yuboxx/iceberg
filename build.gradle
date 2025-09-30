@@ -182,6 +182,7 @@ subprojects {
       exclude group: 'com.sun.jersey'
       exclude group: 'com.sun.jersey.contribs'
       exclude group: 'org.pentaho', module: 'pentaho-aggdesigner-algorithm'
+      exclude group: 'org.jetbrains', module: 'annotations'
     }
 
     testArtifacts
@@ -348,6 +349,7 @@ project(':iceberg-core') {
     api project(':iceberg-api')
     implementation project(':iceberg-common')
     implementation project(path: ':iceberg-bundled-guava', configuration: 'shadow')
+    testRuntimeOnly project(':iceberg-parquet')
     annotationProcessor libs.immutables.value
     compileOnly libs.immutables.value
 
